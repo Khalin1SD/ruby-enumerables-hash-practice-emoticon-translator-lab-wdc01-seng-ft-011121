@@ -29,6 +29,16 @@ end
 
 
 
-def get_english_meaning
-  # code goes here
+def get_english_meaning(path, emoticon)
+  
+  data = load_library(path)
+  data.each do |word, lang|
+    if data[word][:japanese] == emoticon
+      
+      return word
+      break
+    end
+  end
+end
+  
 end
